@@ -1,0 +1,20 @@
+name: Auto Versioning and Package Builds
+run-name: ${{github.actor}} started to version and package the build
+
+concurrency: development
+
+on: [push]
+jobs: 
+  get-current-version:
+    - name: Get the Current Version of the package
+      runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Display Current Version info
+      - run: echo 'Hello, the latest tag name is: {{ github.ref }} and  release tag name is: ${{ github.event.release.tag_name }}' 
