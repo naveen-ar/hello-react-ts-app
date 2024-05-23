@@ -12,5 +12,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: echo "Hello, the latest tag name is - {{ github.ref }} and  release tag name is - ${{ github.event.release.tag_name }}"
+      - run: echo "Hello, the latest tag name is - ${{github.ref}} and  release tag name is - ${{github.event.release.tag_name}}"
       - run: npm --version
