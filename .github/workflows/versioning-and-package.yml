@@ -14,3 +14,4 @@ jobs:
           node-version: '20'
       - name: Display Current Version info
       - run: echo 'Hello, the latest tag name is - {{ github.ref }} and  release tag name is - ${{ github.event.release.tag_name }}' 
+      - run: npm --version
